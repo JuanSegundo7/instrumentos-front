@@ -1,0 +1,17 @@
+
+footer{
+    width: 100%;
+    height: auto;
+}
+
+#nav-foot-sup{
+    height: 30vh;
+    justify-content: center ;
+}
+
+#nav-foot-inf{
+    height: 15vh;
+    background-color: var(--blue);
+    background-size: contain;
+    background-blend-mode: unset;
+}

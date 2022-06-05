@@ -1,0 +1,36 @@
+#error{
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#error a{
+    padding: 0.5em 1.5em;
+    font-size: 18px;
+    background-color: var(--pink);
+    border-radius: 10px;
+    color: #fff;
+}
+
+#error h1{
+    margin: 0.5em 0;
+    color: var(--pink);
+}
+
+#error h3{
+    text-align: center;
+    color: var(--black);
+}
+
+@media (min-width: 1000px) {
+    #error h1{
+        font-size: 35px;
+    }
+    
+    #error h3{
+        font-size: 26px;
+    }
+}

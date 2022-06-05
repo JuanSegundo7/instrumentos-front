@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Manrope:wght@200;300;400;500;600;700;800&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.instruments_table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0 2em 0;
+}
+
+.instruments_tbody{
+    width: 20em;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: 0.6s;
+    margin: 1.2em;
+    cursor: pointer;
+}
+
+.precio-p{
+    text-decoration: line-through;
+    font-size: 26px;
+    color: rgb(61, 61, 61) !important;
+}
+.instruments_tbody img{
+    max-width: 100%;
+    height: 40vh;
+    object-fit: contain;
+}
+
+#detail p{
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    color: #000;
+}
+
+.instruments_tbody p{
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    color: #000;
+}
+
+.instruments_tbody p{
+    margin: 0;
+}
+
+.instruments_tbody a{
+    height: 100%;
+}
+
+.instrumento-inside{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.instrumento-inside figure{
+    margin: 0;
+    width: 23vw;
+}
+
+.instrumentos-article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.detail-der{
+    height: 100%;
+}
+
+.detail-izq{
+    height: 100%;
+    margin: 0 0.5em;
+}
+
+.descuento-p{
+    font-size: 28px !important;
+    font-weight: bold;
+    color: var(--pink) !important;
+}
+
+#titulo{
+    font-size: 30px;
+    margin: 1em 0 1em 0;
+    color: #fff;
+}
+
+.instruments_tbody:hover{
+    box-shadow: 0px 0px 12px 0px var(--pink);
+    transition: 0.8s;
+}
+
+#instrument-body section{
+    margin: 1em 0;
+}
+
+#detail{
+    width: 100%;
+    height: 100%;
+    padding: 2em 0;
+    margin: 4em 0 4em 0;
+    background-color: #fff;
+}
+
+
+#detail-row{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0px;
+    cursor: default;
+}
+
+#detail-der img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+#detail-row:hover{
+    box-shadow: none;
+    transition: none;
+}
+
+#detail-row tr{
+    margin: 0;
+}
+
+.detail-row-izq{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-detail{
+    font-size: 20px;
+}
+
+#description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#instrument-body h3{
+    margin: 1em 0;
+    font-size: 30px;
+    color: var(--pink);
+}
+
+#description p{
+    font-size: 22px;
+    width: 80%;
+    font-weight: 400;
+}
+
+#caracteristicas{
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: 400;
+    align-items: center;
+}
+
+#caracteristicas-section{
+    padding: 0 8em;
+}
+
+
+#caracteristicas tbody{
+    width: 100%;
+    display: table-row-group;
+    height: auto;
+}
+
+#caracteristicas tr{
+    border: 0;
+    display: table-row;
+    font-size: 20px;
+}
+
+#caracteristicas th{
+    font-size: 20px;
+    width: 50%;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    white-space: normal;
+    color: #fff;
+    padding: 1em;
+}
+
+#caracteristicas td{
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    width: 50%;
+    white-space: normal;
+    color: #fff;
+    padding: 1em;
+}
+
+.blue{
+    background-color: var(--blue)
+}
+
+.ligth-blue{
+    background-color: var(--ligth-blue)
+}
+
+
+
+@media (min-width: 650px) { /*** SWITCH MOBILE-DESKTOP ***/
+    #detail-row{
+        width: 100%;
+        margin: 0;
+        min-height: 50vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0px;
+        background-color: #fff;
+        cursor: default;
+    }
+
+    .detail-izq{
+        margin: 0;
+    }
+}

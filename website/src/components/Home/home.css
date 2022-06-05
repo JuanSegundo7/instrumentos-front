@@ -1,0 +1,117 @@
+.principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.principal h1{
+    text-align: center;
+    font-size: 5em;
+    font-weight: 600;
+    letter-spacing: -.06em;
+    margin: 0 0 16px;
+    color: var(--blue);
+} */
+
+
+
+#flex-principal{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 5em 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#flex-text{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guitarrist{
+    flex: 1;
+}
+
+#guitarrist figure{
+    border-radius: 100%;
+    height: auto;
+    max-width: 25em;
+    padding: 0 0 2em 0.7em;
+    overflow: hidden;
+    background-color: var(--blue);
+}
+
+#guitarrist img{
+    max-width: 40em;
+    height: 100%;
+    position: relative;
+    right: 7em;
+    top: 35px;
+} 
+
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -.06em;
+    margin: 0 0 16px;
+  }
+  
+  span {
+    color: #fff;
+    display: block;
+    font-size: 100px;
+    line-height: 1.1;
+    position: relative;
+  }
+  
+  span::before {
+    animation-name: var(--animation, a);
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(90deg, var(--start-color), var(--end-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-size: 100px;
+    position: absolute;
+    inset: 0;
+    content: var(--content);
+    opacity: 1;
+  }
+  
+  @keyframes a {
+  
+    0%,
+    16.667%,
+    100% {
+      opacity: 1;
+    }
+  
+    33.333%,
+    83.333% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes a2 {
+  
+    0%,
+    100% {
+      opacity: 0;
+    }
+  
+    33.333%,
+    50% {
+      opacity: 1;
+    }
+  
+    16.667%,
+    66.667% {
+      opacity: 0;
+    }
+  }
