@@ -8,6 +8,7 @@ function Home(){
 
 return(
             <section className="margin-sections principal">
+                <h1>Bienvenidos a Colombo Music</h1>
                 <article id="flex-principal">
                     <article id="guitarrist" className="desktop-visible">
                         <figure>
