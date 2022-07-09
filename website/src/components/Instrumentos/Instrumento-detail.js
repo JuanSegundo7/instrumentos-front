@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import "./instrumentos.css";
-import Instrumentos from "./apiInstrumentos"
+import Array from "../functions/arrayInstumentos"
+import {Link} from "react-router-dom"
+
 
 function Instrumento(props) {
   if (props.precioDescuento !== 0) {
@@ -22,7 +24,7 @@ function Instrumento(props) {
             </p>
             {/* <p>Descripcion:</p>
             <p>{props.texto}</p> */}
-            <button id="button-detail" className="button-login">Comprar</button>
+            <Link to={`/carrito/${props.id}`}><button id="button-detail" className="button-login" numero={props.id}>Comprar</button></Link>
           </article>
         </section>
         <section id="description">
@@ -54,10 +56,7 @@ function Instrumento(props) {
               </tr>
             </tbody>
           </table>
-        </section>
-        <section>
-          <h3>Otros instrumentos que podrian interesarte</h3>
-          <Instrumentos />
+          < Array id={props.id} />
         </section>
       </section>
     );
@@ -77,7 +76,7 @@ function Instrumento(props) {
             <p>Precio: $ {props.precio}</p>
             {/* <p>Descripcion:</p>
             <p>{props.texto}</p> */}
-            <button  className="button-login button-detail">Comprar</button>
+            <Link to="/carrito"><button id="button-detail" className="button-login" numero={props.id}>Comprar</button></Link>
           </article>
         </section>
         <section id="description">
@@ -109,10 +108,7 @@ function Instrumento(props) {
               </tr>
             </tbody>
           </table>
-        </section>
-        <section>
-          <h3>Otros instrumentos que podrian interesarte</h3>
-          <Instrumentos />
+          < Array id={props.id} />
         </section>
       </section>
     );

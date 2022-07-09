@@ -29,7 +29,6 @@ function Instrumento(props){
                         <img src={`http://localhost:5000${props.imagenes}`} alt={props.imagen}/>
                     </figure>
                     <p>{props.nombre}</p>
-                    <p>Fabricante: {props.fabricante}</p>
                     <p>Precio: $ {props.precio}</p>
                 </article>
             </a>

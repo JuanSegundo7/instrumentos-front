@@ -1,5 +1,7 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import Axios from 'axios';
+
 
 
 export const useForm = (initialForm, validateForm) => {
@@ -7,6 +9,10 @@ export const useForm = (initialForm, validateForm) => {
     const [errors, setErrors] = useState({});
     const [loading,] = useState(false);
     const [response,] = useState(null);
+    const history  = useHistory()
+
+    let baseUrl = "http://localhost:5000/usuarios/login"
+
 
     const handleChange = (e) => {
         const { name,value } = e.target;
@@ -23,23 +29,24 @@ export const useForm = (initialForm, validateForm) => {
     };
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         setErrors(validateForm(form));
-        let windows = window.location.href = 'http://localhost:3000/'
+        // let windows = window.location.href = 'http://localhost:3000/'
+        console.log(form)
         
         if (Object.keys(errors).length === 0) {
+            console.log(form, "form")
             Axios
-            .post('http://localhost:5000/usuarios/login',form, windows)
+            .post(baseUrl, form)
             .then(response => {
                 console.log(response)
-                })
+            })
             .then(data => console.log(data))
-                .catch(error => {
-                    console.log(error)
-                })
-            
+                .catch(error => {console.log(error)})
+
+            history.push("/")
         }
 
-        e.preventDefault()
         
     
     };

@@ -5,10 +5,13 @@
     width: 300px;
     height: 90vh;
     color: #fff;
-    background-color: var(--blue);
+    background-color: #1d2023;
     border-radius: 20px;
     justify-content: space-evenly;
 }
+
+
+
 
 .forms-container{
     display: flex;

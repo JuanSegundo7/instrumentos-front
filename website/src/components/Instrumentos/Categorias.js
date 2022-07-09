@@ -33,7 +33,7 @@ class Categorias extends Component {
         let titulo = this.state.titulo.nombre;
         let instrumentos = this.state.instrumentos
         return(
-        <section className="margin-sections principal">
+            <section className="principal">
             <h3 id="titulo">{titulo}</h3>
                     <article className="instrumentos-article">      
                     {instrumentos.map((instrumentos, i) => {

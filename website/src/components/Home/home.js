@@ -1,24 +1,23 @@
 import React from 'react';
 import "./home.css";
-import Instrumentos from "../Instrumentos/apiInstrumentos"
+import InstrumentosApi from "../functions/apiFecth"
+import SearchBar from "../functions/searchBar"
 import Guitarrist from "./img/guitarrist-remove.png"
 
 
 function Home(){
 
 return(
-            <section className="margin-sections principal">
-                <h1>Bienvenidos a Colombo Music</h1>
+        <section className="principal">
                 <article id="flex-principal">
                     <article id="guitarrist" className="desktop-visible">
                         <figure>
                             <img src={Guitarrist} alt={Guitarrist} />
                         </figure>
                     </article>
+                    <h1>COLOMBUS MUSIC.</h1>
                 </article>
-                <article id="Instrumentos">
-                    <Instrumentos />
-                </article>
+                    <SearchBar />
             </section>
     )
 }

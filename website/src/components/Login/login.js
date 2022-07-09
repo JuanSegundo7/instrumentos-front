@@ -2,20 +2,20 @@ import { useForm } from '../hooks/useForm';
 import "./login.css"
 
 const initialForm = {
-    email: '',
+    username: '',
     password: ''    
 }
 
 const validationsForm = (form) => {
     let errors = {};
-    let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    // let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    if(!form.email.trim()){
-        errors.email = "El email es requerido"
-    }
-    else if (!regexEmail.test(form.email.trim())) {
-        errors.email = "El email es incorrecto"
-    }
+    // if(!form.email.trim()){
+    //     errors.email = "El email es requerido"
+    // }
+    // else if (!regexEmail.test(form.email.trim())) {
+    //     errors.email = "El email es incorrecto"
+    // }
 
     if(!form.password.trim()){
         errors.password = "La contraseña es requerida"
@@ -32,10 +32,10 @@ function Login(){
 
     return(
         <section className="forms-container margin-sections">
-            <form onSubmit={handleSubmit} method="post" encType="multipart/form-data" className="forms">
+            <form onSubmit={handleSubmit} method="post" className="forms">
                 <p>Ingresá</p>
                 <fieldset>
-                    <input type="email" name="email" placeholder="Email" onChange={handleChange} value={form.email} onBlur={handleBlur} className="input"/>
+                    <input type="text" name="username" placeholder="Username" onChange={handleChange} onBlur={handleBlur} className="input"/>
                     {errors.email && <p className="validations">{errors.email}</p>}
                 </fieldset>
                 <fieldset>

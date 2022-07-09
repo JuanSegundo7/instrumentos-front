@@ -4,7 +4,7 @@ header{
     min-width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
     position: fixed;
-    z-index: 3;
+    z-index: 99;
 };
 
 .mobile-visible{
@@ -16,12 +16,9 @@ header{
 }
 
 #nav-sup{
-    /* rgba(12, 12, 12, 0.6) */
-    /* background-image: linear-gradient(var(--blue),var(--blue, 0.1)),url(../Home/img/rock-pattern.jpg); */
-    height: 23vh;
+    height: 7em;
+    width: 100%;
     background-color: var(--blue);
-    background-size: contain;
-    background-blend-mode: unset;
 }
 
 
@@ -30,8 +27,7 @@ nav{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid transparent;
+    justify-content: space-around;
 }
 
 #nav-izq{
@@ -46,12 +42,12 @@ nav{
 
 #superior{
     display: flex;
-    width: 30%;
-    justify-content: flex-end;
+    width: 40%;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-nav article{
+#categorias-article{
     display: flex;
     width: 100%;
     justify-content: space-evenly;
@@ -84,7 +80,7 @@ header form input:focus{
 }
 
 .Logo {
-    width: 10em;
+    width: 9em;
     height: auto;
     object-fit: contain;
 }
@@ -127,6 +123,13 @@ header form input:focus{
     box-shadow: -1px 0px 35px -5px rgba(0,0,0,0.75);
     background-color: white;
     transition: all 0.5s ease 0s;
+}
+
+.ul-flex{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 #flex-menu{
@@ -210,14 +213,19 @@ header li:hover{
     header{
         position: relative;
     }
+
+    #nav-sup{
+        height: 9em;
+    }
+
     .desktop-visible{
         display: inline-block;
     }
     .mobile-visible{
         display: none ;
     }
-    ul{
-        display: flex !important;
+    #categorias{
+        /* display: flex !important; */
         flex-direction: row;
         width: 95%;
         justify-content: space-around;
@@ -227,13 +235,8 @@ header li:hover{
         justify-content: space-evenly;
     }
 
-    #nav-sup{
-        justify-content: space-evenly;
-        height: 18vh;
-    }
-
     #nav-inf{
-        height: 12vh;
+        height: 5em;
         display: flex;
         align-items: center;
         background-color: var(--ligth-blue);
@@ -253,40 +256,3 @@ header li:hover{
     
 }
 
-@media (min-width: 1000px) {
-    header li{
-        font-size: 26px;
-    }
-}
-
-@media (min-height: 600px) {
-    #flex-menu p{
-        margin: 2.4em 0 0.8em 0;
-        font-size: 1.5em;
-        color: black;
-    }
-}
-
-@media (min-height: 700px) {
-    #flex-menu p{
-        margin: 2.6em 0 0.8em 0;
-        font-size: 1.7em;
-        color: black;
-    }
-}
-
-@media (min-height: 800px) {
-    #flex-menu p{
-        margin: 2.8em 0 0.8em 0;
-        font-size: 2em;
-        color: black;
-    }
-}
-
-@media (min-height: 800px) {
-    #flex-menu p{
-        margin: 2.8em 0 0.8em 0;
-        font-size: 2em;
-        color: black;
-    }
-}
