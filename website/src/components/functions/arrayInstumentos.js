@@ -46,9 +46,6 @@ const ArrayInstumentos = (props) => {
                 return validNumbers.includes(current)
         }
     }
-    
-
-
     return (
         <section id="margin-mobile">
             <article className="instrumentos-article">      

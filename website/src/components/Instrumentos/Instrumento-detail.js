@@ -1,10 +1,22 @@
-import React, {useState} from "react";
-import "./instrumentos.css";
+import React, {useContext} from "react";
+
+import Context from "../userContext/userContext"
 import Array from "../functions/arrayInstumentos"
+import Fav from "../fav/fav"
+
+import "./instrumentos.css";
 import {Link} from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 function Instrumento(props) {
+  const {jwt, setJWT} = useContext(Context)
+  
+  let Favoritos = () => {
+    if(!jwt){return(null)}else{return(<Fav id={props.id}></Fav>)}
+  }
+
   if (props.precioDescuento !== 0) {
     return (
       <section id="instrument-body">
@@ -24,15 +36,15 @@ function Instrumento(props) {
             </p>
             {/* <p>Descripcion:</p>
             <p>{props.texto}</p> */}
-            <Link to={`/carrito/${props.id}`}><button id="button-detail" className="button-login" numero={props.id}>Comprar</button></Link>
+            <article className="flex-evenly">
+              <Favoritos />
+              <Link to="/"><FontAwesomeIcon icon="shopping-cart" className="button-login"/></Link>
+            </article>
           </article>
         </section>
         <section id="description">
-          <article>
             <h3>Descripción</h3>
-            <span></span>
-          </article>
-          <p>{props.texto}</p>
+            <p>{props.texto}</p>
         </section>
         <section id='caracteristicas-section'>
           <h3>Caracteristicas</h3>
@@ -76,14 +88,14 @@ function Instrumento(props) {
             <p>Precio: $ {props.precio}</p>
             {/* <p>Descripcion:</p>
             <p>{props.texto}</p> */}
-            <Link to="/carrito"><button id="button-detail" className="button-login" numero={props.id}>Comprar</button></Link>
+            <article className="flex-evenly">
+              <Favoritos />
+              <Link to="/"><FontAwesomeIcon icon="shopping-cart" className="button-login"/></Link>
+            </article>
           </article>
         </section>
         <section id="description">
-          <article>
-            <h3>Descripción</h3>
-            <span></span>
-          </article>
+          <h3>Descripción</h3>
           <p>{props.texto}</p>
         </section>
         <section id='caracteristicas-section'>

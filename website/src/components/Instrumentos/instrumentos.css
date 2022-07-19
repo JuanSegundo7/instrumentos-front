@@ -119,7 +119,7 @@
 
 
 #detail{
-    margin: 8em 0;
+    margin: 7.5em 0;    
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -178,6 +178,7 @@
     font-size: 22px;
     width: 80%;
     font-weight: 400;
+    margin: 0;
 }
 
 #caracteristicas{

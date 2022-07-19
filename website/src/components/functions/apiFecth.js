@@ -33,27 +33,23 @@ const ApiFecth = (props) => {
         })
 
     if(nuevoArray.length === 0){
-        return(<h1 id='noEncontro'>NO SE ENCONTRO EL INSTRUMENTO QUE BUSCAS</h1>)
+        return(<h1 id='colombus-size' className="home-title">NO SE ENCONTRO EL INSTRUMENTO QUE BUSCAS</h1>)
     }else{
-
-        
         return(
-            <section id='margin-mobile'>
-            <article className="instrumentos-article margin-relative">      
-            {nuevoArray.map((instrumentos, i) => {
-                return <Instrumento
-                key={instrumentos + i}
-                id={instrumentos.id}
-                imagenes={instrumentos.imagenes[0].url_imagen}
-                nombre={instrumentos.nombre}
-                fabricante={instrumentos.fabricante}
-                // fecha={instrumentos.fecha}
-                precio={instrumentos.precio}
-                precioDescuento={instrumentos.precioDescuento}
-                />
-            })}
+            <article className="instrumentos-article margin-relative" >      
+                {nuevoArray.map((instrumentos, i) => {
+                    return <Instrumento
+                    key={instrumentos + i}
+                    id={instrumentos.id}
+                    imagenes={instrumentos.imagenes[0].url_imagen}
+                    nombre={instrumentos.nombre}
+                    fabricante={instrumentos.fabricante}
+                    // fecha={instrumentos.fecha}
+                    precio={instrumentos.precio}
+                    precioDescuento={instrumentos.precioDescuento}
+                    />
+                })}
             </article>
-        </section>
         )
         // }
     }

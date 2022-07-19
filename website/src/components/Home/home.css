@@ -6,22 +6,6 @@
     text-align: center;
 }
 
-.principal h1{
-    text-align: center;
-    font-size: 45px;
-    width: 60%;
-    font-weight: 600;
-    background: url(./img/lava.gif);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #fff;
-    margin: 0 0 16px;
-    color: #fff;
-} 
-
 #search h2{
     color: #fff;
     margin: 0.3em 0;
@@ -92,8 +76,9 @@
 } 
 
 @media (min-width: 350px){
-    .principal h1{
-        font-size: 54px;
+    #colombus-size{
+        font-size: 64px;
+        width: 100%;
     }
 }
 
@@ -120,9 +105,12 @@
         font-size: 2.5em;
     }
 
-    .principal h1{
-        font-size: 8em;
-        width: 100%;
+    .home-title{
+        font-size: 5em;
+    }
+
+    #colombus-size, .home-title{
+        font-size: 6em;
     }
 
     #flex-principal{
@@ -135,7 +123,7 @@
 
     #flex-principal h1{
         position: relative;
-        bottom: 0.5em;
+        bottom: 0em;
     }
 
 
@@ -146,7 +134,7 @@
 
 @media (min-width: 650px) and (min-height: 600px){
 
-    .principal h1{
+    .home-title{
         font-size: 8em;
     }
     
@@ -167,6 +155,10 @@
         left: 15em;
     }
 
+    #colombus-size{
+        width: 9em;
+    }
+
     #flex-principal{
         flex-direction: row;
         margin: 0;
@@ -174,6 +166,7 @@
 
     #flex-principal h1{
         font-size: 5.5em;
+        bottom: 0.5em;
         margin: 0;
     }
 
@@ -220,6 +213,7 @@
 @media (min-width: 1000px){
     #flex-principal h1{
         font-size: 6em;
+        width: 100%;
         margin: 0;
     }
 

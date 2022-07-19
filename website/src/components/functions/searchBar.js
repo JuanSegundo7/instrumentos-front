@@ -18,7 +18,14 @@ const SearchBar = () => {
             </form>
                 <h2>Busca el nombre de tu instrumento favorito</h2>
         </article>
-        <Instrumento marca={value}/>
+        <section id="visual">
+            <article className="mobile-visible">
+                <h1 className="home-title">COLOMBUS MUSIC</h1>
+            </article>
+            <article>
+            </article>
+            <Instrumento marca={value}/>
+        </section>
         </React.Fragment>
 
     )

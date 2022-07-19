@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import "./carrito.css"
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 
 const Carrito = () => {

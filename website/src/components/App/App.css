@@ -15,10 +15,42 @@ body{
   margin-top: 8em;
 }
 
+.home-title{
+  text-align: center;
+  font-size: 50px;
+  width: 100%;
+  font-weight: 600;
+  background: url(../Home/img/lava.gif);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+  margin: 0;
+  color: #fff;
+} 
+
+
+
+
 #margin-color{
   background-color: #23262a;
   margin: 3em 0 3em 0 ;
   width: 100%;
+}
+
+input[type="file"] {
+  display: none !important;
+}
+
+#image {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 50px;
+  cursor: pointer;
 }
 
 body{
@@ -41,10 +73,20 @@ main{
   text-align: center;
 }
 
-.margin-relative{
-  position: relative;
-  bottom: 8em;
+.mobile-visible{
+  display: block;
 }
+
+.desktop-visible{
+  display: none;
+}
+
+.flex-evenly{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
 
 .margin-sections{
   margin: 8em 0 2em 0;
@@ -71,11 +113,30 @@ fieldset{
 
 
 @media (min-width: 650px) {
+  .margin-relative{
+    position: relative;
+    bottom: 8em;
+  }
+
+  .desktop-visible{
+    display: inline-block;
+  }
+
+  .mobile-visible{
+    display: none ;
+  }
+
   #visual{
     margin-top: 0;
   }
   .margin-sections{
     margin: 2em 0 2em 0;
   }
+  
+  .home-title{
+    width: 60%;
+    font-weight: 600;
+    margin: 0 0 16px;
+  } 
 }
 

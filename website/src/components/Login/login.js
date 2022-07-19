@@ -1,46 +1,53 @@
+import React, {useState} from 'react'
 import { useForm } from '../hooks/useForm';
+import Context from "../userContext/userContext"
 import "./login.css"
+
 
 const initialForm = {
     username: '',
     password: ''    
 }
 
-const validationsForm = (form) => {
+const validationsForm = (form) => { 
+    // console.log(form)    
     let errors = {};
-    // let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    // if(!form.email.trim()){
-    //     errors.email = "El email es requerido"
-    // }
-    // else if (!regexEmail.test(form.email.trim())) {
-    //     errors.email = "El email es incorrecto"
-    // }
-
-    if(!form.password.trim()){
-        errors.password = "La contraseña es requerida"
+        if(!form.username.trim()){
+            errors.email = "El valor es requerido"
+            }
+            
+        if(!form.password.trim()){
+            errors.password = "La contraseña es requerida"
+        }
+            
+            return errors;
     }
+        
+        function Login(){
+        const [noUsuario, setNoUsuario] = useState(null);
+        const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm, setNoUsuario)
 
-    return errors;
-}
-
-function Login(){
-
-    const {form, errors, loading, response, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm)
-
+        if(noUsuario !== null){
+            setTimeout(function() {
+                setNoUsuario(null)
+            }, 2000)
+        }
     // action="http://localhost:5000/user/login"
 
-    return(
+        return(
         <section className="forms-container margin-sections">
             <form onSubmit={handleSubmit} method="post" className="forms">
                 <p>Ingresá</p>
                 <fieldset>
-                    <input type="text" name="username" placeholder="Username" onChange={handleChange} onBlur={handleBlur} className="input"/>
+                    <input type="text" name="username" placeholder="Username o Email" onChange={handleChange} onBlur={handleBlur} className="input"/>
                     {errors.email && <p className="validations">{errors.email}</p>}
                 </fieldset>
                 <fieldset>
                         <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} value={form.password} onBlur={handleBlur} className="input"/>
                         {errors.password && <p className="validations">{errors.password}</p>}
+                        {noUsuario && <p className="validations">{noUsuario}</p>}
                 </fieldset>
                     <input className="button-login" type="submit" value="Ingresar"/>
                 <fieldset className="flex_pass">
@@ -55,6 +62,6 @@ function Login(){
             </form>
         </section>
     )
-}
+    }
 
 export default Login;

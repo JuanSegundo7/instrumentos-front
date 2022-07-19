@@ -1,0 +1,49 @@
+.perfil-titulos, .perfil-titulos-2{
+    color: #fff;
+    font-size: 30px;
+}
+
+#perfil-datos{
+    margin-top: 8em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#perfil-datos figure{
+    width: auto;
+    
+}
+
+#perfil-datos img{
+    border-radius: 50%;
+    width: 10em;
+    border: 2px solid white;
+    height: auto;
+}
+
+@media all and (min-width:650px){
+    .perfil-titulos{
+        font-size: 5em;
+    }
+
+    .perfil-titulos-2{
+        font-size: 3.5em;
+        width: 50%;
+    }
+
+    #perfil-datos{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #perfil-datos figure{
+        width: 15em;
+    }
+
+    #perfil-datos img{
+        width: 100%;
+    }
+}

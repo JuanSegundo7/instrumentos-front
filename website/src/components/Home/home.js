@@ -15,10 +15,10 @@ return(
                             <img src={Guitarrist} alt={Guitarrist} />
                         </figure>
                     </article>
-                    <h1>COLOMBUS MUSIC.</h1>
+                    <h1 className="home-title">COLOMBUS MUSIC.</h1>
                 </article>
-                    <SearchBar />
-            </section>
+                <SearchBar />
+        </section>
     )
 }
 

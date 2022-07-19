@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Instrumento from "./Instrumentos-ofertas"
 import "../Instrumentos/instrumentos.css"
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 
 class Offers extends Component {

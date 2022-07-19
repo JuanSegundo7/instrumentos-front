@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./instrumentos.css"
 import Instrumento from "./instrumento"
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 class Categorias extends Component {
     constructor(props){

@@ -1,15 +1,23 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
+import useUser from '../hooks/useUser';
 import Axios from 'axios';
 
 
 
-export const useForm = (initialForm, validateForm) => {
+export const useForm = (initialForm, validateForm, setNoUsuario) => {
     const [form, setForm] = useState(initialForm);
+    const {login, isLogged} = useUser()
     const [errors, setErrors] = useState({});
-    const [loading,] = useState(false);
-    const [response,] = useState(null);
+    // const [loading,] = useState(false);
+    // const [response,] = useState(null);
     const history  = useHistory()
+
+    useEffect(() => {
+        if (isLogged) {
+            history.push("/")
+        }
+    }, [isLogged])
 
     let baseUrl = "http://localhost:5000/usuarios/login"
 
@@ -28,34 +36,30 @@ export const useForm = (initialForm, validateForm) => {
         setErrors(validateForm(form));
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setErrors(validateForm(form));
-        // let windows = window.location.href = 'http://localhost:3000/'
-        console.log(form)
-        
-        if (Object.keys(errors).length === 0) {
-            console.log(form, "form")
-            Axios
-            .post(baseUrl, form)
-            .then(response => {
-                console.log(response)
-            })
-            .then(data => console.log(data))
-                .catch(error => {console.log(error)})
+    const handleSubmit = async (e) => {
+        try{
 
-            history.push("/")
+            e.preventDefault()
+            setErrors(validateForm(form));
+            // console.log(form)
+            
+            if (Object.keys(errors).length === 0) { 
+                let { data } = await Axios.post(baseUrl, form)
+
+                login(data)
+
+            }
+                
+        }catch(e){
+            setNoUsuario("El usuario ingresado no se encuentra")
         }
-
-        
+                
     
     };
 
     return {
         form,
         errors,
-        loading,
-        response,
         handleChange,
         handleBlur,
         handleSubmit
