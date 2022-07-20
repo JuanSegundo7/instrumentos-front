@@ -11,8 +11,6 @@
 }
 
 
-
-
 .forms-container{
     display: flex;
     justify-content: center;
@@ -92,4 +90,11 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+@media all and (min-height: 700px){
+    .forms{
+        height: 70vh;
+    }
+        
 }
