@@ -17,7 +17,7 @@ class Categorias extends Component {
         try{
             const category = this.props.match.params.category;
             
-            let instrumentos = await fetch(`http://localhost:5000/${category}`).then(response => response.json())
+            let instrumentos = await fetch(`https://instumentos-back.herokuapp.com/${category}`).then(response => response.json())
             
             this.setState({
                 instrumentos: instrumentos.instrumentos,

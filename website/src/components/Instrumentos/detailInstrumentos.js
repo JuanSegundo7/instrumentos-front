@@ -15,7 +15,7 @@ class Detailinstrumentos extends Component {
         try{
 
             const id = this.props.match.params.id;
-            let instrumentos = await fetch(`http://localhost:5000/instrumentos/${id}`).then(response => response.json()).then(res => this.setState({instrumentosDetail: [res]}))
+            let instrumentos = await fetch(`https://instumentos-back.herokuapp.com/instrumentos/${id}`).then(response => response.json()).then(res => this.setState({instrumentosDetail: [res]}))
             
             this.setState({
                 instrumentoDetail: instrumentos,                
