@@ -34,7 +34,7 @@ const validationsForm = (form) => {
                 setNoUsuario(null)
             }, 2000)
         }
-    // action="http://localhost:5000/user/login"
+    // action="https://instumentos-back.herokuapp.com/user/login"
 
         return(
         <section className="forms-container margin-sections">

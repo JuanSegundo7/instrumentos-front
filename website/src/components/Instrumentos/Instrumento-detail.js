@@ -23,7 +23,7 @@ function Instrumento(props) {
         <section id="detail-row" className="instrumentos-article">
           <article className="detail-der">
             <img
-              src={`http://localhost:5000${props.imagenes}`}
+              src={`https://instumentos-back.herokuapp.com/${props.imagenes}`}
               alt={props.imagen}
             />
           </article>
@@ -78,7 +78,7 @@ function Instrumento(props) {
         <section id="detail-row" className="instrumentos-article">
           <article className="detail-der">
             <img
-              src={`http://localhost:5000${props.imagenes}`}
+              src={`https://instumentos-back.herokuapp.com${props.imagenes}`}
               alt={props.imagen}
             />
           </article>

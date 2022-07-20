@@ -5,7 +5,7 @@ import jwtService from "jwt-decode"
 
 const FavService = async (id_fav, jwt) => {
     try{
-        const baseUrl = 'http://localhost:5000/usuarios/fav'
+        const baseUrl = 'https://instumentos-back.herokuapp.com/usuarios/fav'
         const user = jwtService(jwt.token)
         console.log(user)
         

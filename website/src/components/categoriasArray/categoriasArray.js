@@ -11,7 +11,7 @@ class Categoria extends Component {
 
     async componentDidMount() {
         try{
-            let categorias = await fetch("http://localhost:5000/instrumentos").then(response => response.json())
+            let categorias = await fetch("https://instumentos-back.herokuapp.com/instrumentos").then(response => response.json())
             
             this.setState({
                 categorias: categorias.categorias,

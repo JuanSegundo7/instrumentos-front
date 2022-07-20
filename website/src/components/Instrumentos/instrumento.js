@@ -9,7 +9,7 @@ function Instrumento(props){
                 <a href={`/instrumento/${props.id}`}>
                     <article className="instrumento-inside">
                         <figure>
-                            <img src={`http://localhost:5000${props.imagenes}`} alt={props.imagen}/>
+                            <img src={`https://instumentos-back.herokuapp.com${props.imagenes}`} alt={props.imagen}/>
                         </figure>
                         <p>{props.nombre}</p>
                         <p className="precio-p">Precio Anterior: $ {props.precio}</p>
@@ -26,7 +26,7 @@ function Instrumento(props){
             <a href={`/instrumento/${props.id}`}>
                 <article className="instrumento-inside">
                     <figure>
-                        <img src={`http://localhost:5000${props.imagenes}`} alt={props.imagen}/>
+                        <img src={`https://instumentos-back.herokuapp.com${props.imagenes}`} alt={props.imagen}/>
                     </figure>
                     <p>{props.nombre}</p>
                     <p>Precio: $ {props.precio}</p>
