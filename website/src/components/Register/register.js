@@ -41,7 +41,7 @@ class Register extends Component {
         
 
         Axios
-        .post('https://instumentos-back.herokuapp.com/usuarios/guardar', formData)
+        .post('http://localhost:5000/usuarios/guardar', formData)
         .then(response => {
             console.log(response)
         })
