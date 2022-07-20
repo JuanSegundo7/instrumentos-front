@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
 import "./formObject.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {useHistory} from 'react-router-dom';
+
 
 
 class Form extends Component {
@@ -29,6 +32,7 @@ class Form extends Component {
     
     submitHandler = e => {
         e.preventDefault();
+        const history = useHistory()
         
         const formData = new FormData();
         formData.append("nombre", this.state.nombre);
@@ -52,7 +56,6 @@ class Form extends Component {
             formData.append("images", img);
         });
 
-        console.log("hola",this.state)
         Axios
         .post('https://instumentos-back.herokuapp.com/guardar', formData)
         .then(response => {
@@ -62,6 +65,8 @@ class Form extends Component {
 			.catch(error => {
                 console.log(error)
 			})
+
+        history.push("/")
     }
         
         
@@ -155,7 +160,10 @@ class Form extends Component {
                         </fieldset>
                         <fieldset className="fecha-form-instrumentos">
                             <h3>Subi una o varias imagenes</h3>
-                            <input type="file" name="images" id="fotosProyecto" onChange={this.changeHandler} multiple />
+                            <label htmlFor="file" id="image">
+                                <FontAwesomeIcon icon="cloud"/> Custom Upload
+                            </label>
+                            <input type="file" name="images" className="input" onChange={this.changeHandler} id="fotosProyecto" multiple/>
                         </fieldset>
                     </article>
                         <fieldset className="flex-botones">

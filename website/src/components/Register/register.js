@@ -2,7 +2,6 @@ import React, { Component }from 'react';
 import "./register.css"
 import Axios from "axios";
 import {useHistory} from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Register extends Component {
@@ -25,9 +24,9 @@ class Register extends Component {
         }
     }
     
-    submitHandler = e => {
-        let history = useHistory()
+    submitHandler = (e) => {
         e.preventDefault();
+        const history = useHistory()
         
         const formData = new FormData();
         formData.append("username", this.state.username);
@@ -38,10 +37,12 @@ class Register extends Component {
         formData.append("file", this.state.file);
         
         console.log(formData);
+
+        console.log("llegue 1");
         
 
         Axios
-        .post('http://localhost:5000/usuarios/guardar', formData)
+        .post('https://instumentos-back.herokuapp.com/usuarios/guardar', formData)
         .then(response => {
             console.log(response)
         })
@@ -49,6 +50,9 @@ class Register extends Component {
         .catch(error => {
             console.log(error)
         })
+
+        console.log("llegue 2");
+
         
         
         history.push("/")
