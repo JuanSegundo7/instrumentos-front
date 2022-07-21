@@ -69,6 +69,8 @@ class Form extends Component {
                 console.log(error)
 			})
             .then(window.location.replace("/"))
+
+
         }catch(error) {
             console.log(error);
         }
@@ -83,8 +85,8 @@ class Form extends Component {
             return(
                 <main>
 
-        <section className="forms-container margin-sections">
-            <section>
+            <section className="forms-container margin-sections">
+                <section>
                 <form onSubmit={this.submitHandler} method="POST" encType="multipart/form-data" id="form-instrumentos">
                     <article className="form-articles">
                         <fieldset>
