@@ -5,7 +5,7 @@ import Axios from 'axios';
 
 
 
-export const useForm = (initialForm, validateForm, setNoUsuario) => {
+export const useForm = (initialForm, validateForm, setNoUsuario, image) => {
     const [form, setForm] = useState(initialForm);
     const {login, isLogged} = useUser()
     const [errors, setErrors] = useState({});
@@ -60,36 +60,28 @@ export const useForm = (initialForm, validateForm, setNoUsuario) => {
     const handleSubmitRegister = (e) => {
         e.preventDefault();
 
-        console.log(form);
+        const formData = new FormData();
+        formData.append("file", form.file)
         
-        // const formData = new FormData();
-        // formData.append("username", this.state.username);
-        // formData.append("nombre", this.state.nombre);
-        // formData.append("apellido", this.state.apellido);
-        // formData.append("email", this.state.email);
-        // formData.append("password", this.state.password);
-        // formData.append("file", this.state.file);
-        
-        // console.log(formData);
 
         console.log("llegue 1");
         
 
-        // Axios
-        // .post('http://localhost:5000/usuarios/guardar', )
-        // .then(response => {
-        //     console.log(response)
-        // })
-        // .then(data => console.log(data))
-        // .catch(error => {
-        //     console.log(error)
-        // })
+        Axios
+        .post('http://localhost:5000/usuarios/guardar', {form, formData} )
+        .then(response => {
+            console.log(response)
+        })
+        .then(data => console.log(data))
+        .catch(error => {
+            console.log(error)
+        })
 
-        console.log("llegue 2");
+        // console.log("llegue 2");
 
         
         
-        history.push("/")
+        // history.push("/")
         
         
     }
@@ -99,7 +91,8 @@ export const useForm = (initialForm, validateForm, setNoUsuario) => {
         errors,
         handleChange,
         handleBlur,
-        handleSubmit
+        handleSubmit,
+        handleSubmitRegister
     };
 
 }
