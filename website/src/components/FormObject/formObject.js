@@ -60,7 +60,7 @@ class Form extends Component {
             // https://instumentos-back.herokuapp.com/guardar
             
             Axios
-            .post('https://instumentos-back.herokuapp.com/guardar/guardar', formData)
+            .post('https://instumentos-back.herokuapp.com/guardar', formData)
             .then(response => {
                 console.log(response)
 			})
