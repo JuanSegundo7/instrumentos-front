@@ -31,42 +31,48 @@ class Form extends Component {
     }
     
     submitHandler = e => {
-        e.preventDefault();
-        const history = useHistory()
-        
-        const formData = new FormData();
-        formData.append("nombre", this.state.nombre);
-        formData.append("fabricante", this.state.fabricante);
-        formData.append("precio", this.state.precio);
-        formData.append("categoria", this.state.categoria);
-        formData.append("descuento", this.state.descuento);
-        formData.append("precioDescuento", this.state.precioDescuento);
-        formData.append("texto", this.state.texto);
-        formData.append("fecha", this.state.fecha);
-        formData.append("modelo", this.state.modelo);
-        formData.append("color", this.state.color);
+        try{
 
-
-        console.log(formData);
-        
-        const files = Array.from(this.state.images)
-        formData.append("images", files);
-        
-        files.forEach((img) => {
-            formData.append("images", img);
-        });
-
-        Axios
-        .post('https://instumentos-back.herokuapp.com/guardar', formData)
-        .then(response => {
-            console.log(response)
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append("nombre", this.state.nombre);
+            formData.append("fabricante", this.state.fabricante);
+            formData.append("precio", this.state.precio);
+            formData.append("categoria", this.state.categoria);
+            formData.append("descuento", this.state.descuento);
+            formData.append("precioDescuento", this.state.precioDescuento);
+            formData.append("texto", this.state.texto);
+            formData.append("fecha", this.state.fecha);
+            formData.append("modelo", this.state.modelo);
+            formData.append("color", this.state.color);
+            
+            
+            console.log(formData);
+            
+            const files = Array.from(this.state.images)
+            formData.append("images", files);
+            
+            files.forEach((img) => {
+                formData.append("images", img);
+            });
+            
+            // https://instumentos-back.herokuapp.com/guardar
+            
+            Axios
+            .post('https://instumentos-back.herokuapp.com/guardar/guardar', formData)
+            .then(response => {
+                console.log(response)
 			})
-        .then(data => console.log(data))
+            .then(data => console.log(data))
 			.catch(error => {
                 console.log(error)
 			})
-
-        history.push("/")
+            .then(window.location.replace("/"))
+        }catch(error) {
+            console.log(error);
+        }
+        
     }
         
         
@@ -163,7 +169,7 @@ class Form extends Component {
                             <label htmlFor="file" id="image">
                                 <FontAwesomeIcon icon="cloud"/> Custom Upload
                             </label>
-                            <input type="file" name="images" className="input" onChange={this.changeHandler} id="fotosProyecto" multiple/>
+                            <input type="file" name="images" className="input" onChange={this.changeHandler} id="file" multiple/>
                         </fieldset>
                     </article>
                         <fieldset className="flex-botones">
