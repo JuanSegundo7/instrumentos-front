@@ -23,9 +23,9 @@ const validationsForm = (form) => {
         }
             
             return errors;
-    }
+}
         
-        function Login(){
+function Login(){
         const [noUsuario, setNoUsuario] = useState(null);
         const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm, setNoUsuario)
 

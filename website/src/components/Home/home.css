@@ -65,6 +65,8 @@
     padding: 0 0 2em 0.7em;
     overflow: hidden;
     background-color: var(--blue);
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #guitarrist img{
@@ -73,6 +75,11 @@
     position: relative;
     right: 7em;
     top: 35px;
+
+} 
+
+#guitarrist figure:hover{
+    box-shadow: 0px 0px 20px 0px rgb(255, 149, 9);
 } 
 
 @media (min-width: 350px){
