@@ -6,6 +6,8 @@ const ApiFecth = (props) => {
     let nuevoArray
     let array = instrumentosApi.instrumentos
     let marca = props.marca.toLowerCase()
+    // https://instumentos-back.herokuapp.com
+    // http://localhost:3000/
 
         useEffect(async () => {
             try{
@@ -41,7 +43,7 @@ const ApiFecth = (props) => {
                     return <Instrumento
                     key={instrumentos + i}
                     id={instrumentos.id}
-                    imagenes={instrumentos.imagenes[0].url_imagen}
+                    imagenes={instrumentos.imagenes[0].url_imagen === undefined ? "hola" : instrumentos.imagenes[0].url_imagen}
                     nombre={instrumentos.nombre}
                     fabricante={instrumentos.fabricante}
                     // fecha={instrumentos.fecha}
