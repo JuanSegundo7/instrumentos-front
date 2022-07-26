@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import UsersArticle from "./UsersArticle"
 
 const AllUsers = () => {
-    let [users, setUsers] = useState("")
+    let [users, setUsers] = useState(undefined)
+
     useEffect(async () => {
         try{
             await fetch(`https://instumentos-back.herokuapp.com/user/all`)
@@ -13,25 +15,28 @@ const AllUsers = () => {
             console.log('====================================');
         }
     },[])
+
+    console.log(users);
+
+    if(users === undefined){
+        return <p>Cargando...</p>
+    }else{
     return (
         <section id="margin-mobile">
             <article className="instrumentos-article">      
-            {users.map((instrumentos, i) => {
-                return <Instrumento
-                key={instrumentos + i}
-                id={instrumentos.id}
-                imagenes={instrumentos.imagenes[0].url_imagen}
-                nombre={instrumentos.nombre}
-                fabricante={instrumentos.fabricante}
-                // fecha={instrumentos.fecha}
-                precio={instrumentos.precio}
-                precioDescuento={instrumentos.precioDescuento}
+            {users.map((user, i) => {
+                return <UsersArticle
+                key={user + i}
+                id={user.id}
+                avatar={user.avatar}
+                username={user.username}
+                email={user.email}
                 />
             })}
             </article>
         </section>
         
     );
-}
+}}
 
 export default AllUsers;

@@ -1,8 +1,8 @@
 import React from 'react';
 import "./home.css";
-import InstrumentosApi from "../functions/apiFecth"
 import SearchBar from "../functions/searchBar"
 import Guitarrist from "./img/guitarrist-remove.png"
+import {Link} from "react-router-dom"
 
 
 function Home(){
@@ -12,7 +12,9 @@ return(
                 <article id="flex-principal">
                     <article id="guitarrist" className="desktop-visible">
                         <figure>
-                            <img src={Guitarrist} alt={Guitarrist} />
+                            <Link to="/users">
+                                <img src={Guitarrist} alt={Guitarrist}/>
+                            </Link>
                         </figure>
                     </article>
                     <h1 className="home-title">COLOMBUS MUSIC.</h1>
