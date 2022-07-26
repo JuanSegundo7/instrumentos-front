@@ -31,7 +31,7 @@ const User = (props) => {
             <section id="user-detail">
                 <section id="user_saved">
                         <figure id="user_figure">
-                            <img src={`http://localhost:5000${user.avatar}`} />
+                            <img src={`https://instumentos-back.herokuapp.com${user.avatar}`} />
                         </figure>
                         <h3 id="bienvenido_user">Este es el perfil de {user.nombre}</h3>
                 </section>
