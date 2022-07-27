@@ -24,7 +24,7 @@ const Perfil = () => {
     
     if(jwt !== null){
         user = jwtService(jwt.token)
-        baseUrl = `https://instrumentoss.herokuapp.com/user/${user.id}/favs`
+        baseUrl = `https://instumentos-back.herokuapp.com/user/${user.id}/favs`
     }
     
 
@@ -52,7 +52,7 @@ const Perfil = () => {
             <article id="perfil-datos">
                 <h1 className="perfil-titulos">¡Hola {jwt.username}!</h1>
                 <figure>
-                    <img src={`https://instrumentoss.herokuapp.com${jwt.avatar}`}></img>
+                    <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`}></img>
                 </figure>
             </article>
             <NoInstumentos instrumentos={instrumentos} />

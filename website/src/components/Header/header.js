@@ -75,7 +75,7 @@ function Header(){
                     </Link>
                     <Link to="/perfil" className="desktop-visible">
                         <figure>
-                            <img src={`https://instrumentoss.herokuapp.com${jwt.avatar}`} id="avatar"></img>
+                            <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`} id="avatar"></img>
                         </figure>
                     </Link>
                     <Link to="/crear-instrumento">
