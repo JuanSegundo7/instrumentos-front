@@ -6,7 +6,7 @@ const AllUsers = () => {
 
     useEffect(async () => {
         try{
-            await fetch(`https://instumentos-back.herokuapp.com/user/all`)
+            await fetch(`http://localhost:5000/user/all`)
             .then(response => response.json())
             .then(data => setUsers(data))
         }catch(e){
@@ -15,8 +15,6 @@ const AllUsers = () => {
             console.log('====================================');
         }
     },[])
-
-    console.log(users);
 
     if(users === undefined){
         return <p>Cargando...</p>

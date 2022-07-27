@@ -34,7 +34,7 @@ function Login(){
                 setNoUsuario(null)
             }, 2000)
         }
-    // action="https://instumentos-back.herokuapp.com/user/login"
+    // action="http://localhost:5000/user/login"
 
         return(
         <section className="forms-container margin-sections">

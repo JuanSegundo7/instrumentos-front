@@ -4,9 +4,10 @@ import Instrumento from "../Instrumentos/instrumento"
 const NoInstrumentos = (props) => {
     let instrumentos = props.instrumentos
     if(instrumentos.length == 0){
-        return <h2 className="perfil-titulos-2">No hay instrumentos guardados todavia</h2> 
+        return <h2 className="h1-white">No hay instrumentos guardados todavia</h2> 
     }else{
-        return <article className="instrumentos-article">      
+        return <section>
+        <article className="instrumentos-article">      
             {instrumentos.map((instrumentos, i) => {
                 return <Instrumento
                 key={instrumentos + i}
@@ -19,6 +20,7 @@ const NoInstrumentos = (props) => {
                 />
             })}
             </article>
+        </section>
     }   
 }
 

@@ -24,13 +24,9 @@ const Perfil = () => {
     
     if(jwt !== null){
         user = jwtService(jwt.token)
-        baseUrl = `https://instumentos-back.herokuapp.com/user/${user.id}/favs`
+        baseUrl = `http://localhost:5000/user/${user.id}/favs`
     }
     
-    console.log(instrumentos, "instrumentos");
-    console.log('====================================');
-    console.log(jwt);
-    console.log('====================================');
 
     useEffect( () => {
         if(!isLogged){
@@ -56,10 +52,9 @@ const Perfil = () => {
             <article id="perfil-datos">
                 <h1 className="perfil-titulos">¡Hola {jwt.username}!</h1>
                 <figure>
-                    <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`}></img>
+                    <img src={`http://localhost:5000${jwt.avatar}`}></img>
                 </figure>
             </article>
-            <h1 className="perfil-titulos-2">Estos son los instrumentos que guardaste</h1>
             <NoInstumentos instrumentos={instrumentos} />
             <article>
                 <button className="button-login" onClick={onSubmit}> Desconectarse </button>

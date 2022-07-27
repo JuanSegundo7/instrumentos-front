@@ -87,6 +87,11 @@ main{
   justify-content: space-evenly;
 }
 
+.h1-white{
+  color: #fff;
+  font-size: 2em;
+}
+
 
 .margin-sections{
   margin: 8em 0 2em 0;
