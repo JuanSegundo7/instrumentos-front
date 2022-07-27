@@ -4,9 +4,6 @@ import errorImage from '../Home/img/error.webp'
 
 function Instrumento(props){
     if(props.precioDescuento !== 0){
-        console.log('====================================');
-        console.log(props.imagenes);
-        console.log('====================================');
         return(
             <section className="instruments_table">
             <article className="instruments_tbody">

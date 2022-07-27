@@ -9,7 +9,7 @@ const Carrito = () => {
         try{
             const id = this.props.match.params.id;
             console.log(id);
-            await fetch(`http://localhost:5000/instrumentos/all`)
+            await fetch(`https://instumentos-back.herokuapp.com/instrumentos/all`)
             .then(response => response.json())
             // 4. Setting *dogImage* to the image url that we received from the response above
         }catch(e){
