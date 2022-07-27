@@ -8,7 +8,7 @@ const UsersArticle = (props) => {
                 <a href={`/user/${props.id}`}>
                     <article className="instrumento-inside">
                         <figure>
-                            <img src={`http://localhost:5000${props.avatar}`} onError={e => { e.currentTarget.src = errorImage }} alt={props.nombre}/>
+                            <img src={`https://instumentos-back.herokuapp.com${props.avatar}`} onError={e => { e.currentTarget.src = errorImage }} alt={props.nombre}/>
                         </figure>
                         <p>{props.username}</p>
                         <p>{props.email}</p>
