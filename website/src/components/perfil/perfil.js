@@ -24,7 +24,7 @@ const Perfil = () => {
     
     if(jwt !== null){
         user = jwtService(jwt.token)
-        baseUrl = `http://localhost:5000/user/${user.id}/favs`
+        baseUrl = `https://instrumentoss.herokuapp.com/user/${user.id}/favs`
     }
     
 
