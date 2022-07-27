@@ -6,7 +6,7 @@ const AllUsers = () => {
 
     useEffect(async () => {
         try{
-            await fetch(`http://localhost:5000/user/all`)
+            await fetch(`https://instumentos-back.herokuapp.com/user/all`)
             .then(response => response.json())
             .then(data => setUsers(data))
         }catch(e){
