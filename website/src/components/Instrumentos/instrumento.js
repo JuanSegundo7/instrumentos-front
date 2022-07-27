@@ -13,7 +13,7 @@ function Instrumento(props){
                 <a href={`/instrumento/${props.id}`}>
                     <article className="instrumento-inside">
                         <figure>
-                            <img src={props.imagenes === undefined ? errorImage : `https://instumentos-back.herokuapp.com${props.imagenes}`} alt={props.nombre}/>
+                        <img src={`https://instumentos-back.herokuapp.com${props.imagenes}`} onError={e => { e.currentTarget.src = errorImage }} alt={props.nombre}/>
                         </figure>
                         <p>{props.nombre}</p>
                         <p className="precio-p">Precio Anterior: $ {props.precio}</p>

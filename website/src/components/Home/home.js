@@ -1,6 +1,7 @@
 import React from 'react';
 import "./home.css";
 import SearchBar from "../functions/searchBar"
+import Flea from "./img/flea.png"
 import Guitarrist from "./img/guitarrist-remove.png"
 import {Link} from "react-router-dom"
 

@@ -164,6 +164,10 @@
     align-items: center;
 }
 
+#userArticle img{
+    border-radius: 50%;
+}
+
 #instrument-body h3{
     margin: 1em 0;
     font-size: 30px;

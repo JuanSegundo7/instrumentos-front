@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./user.css"
 import { withRouter } from "react-router-dom";
+import errorImage from "../Home/img/error.webp"
 
 const User = (props) => {
      const [user, setUser] = useState()
@@ -19,19 +20,16 @@ const User = (props) => {
         }
     });
 
-    // let favorites = () => {
-    //     if(user.)
-    // }
-
 
     if(user === undefined){
         return <p>Cargando...</p>
     }else{
+        console.log(user)
         return (
             <section id="user-detail">
                 <section id="user_saved">
                         <figure id="user_figure">
-                            <img src={`https://instumentos-back.herokuapp.com${user.avatar}`} />
+                            <img src={`https://instumentos-back.herokuapp.com${user.avatar}`} onError={e => { e.currentTarget.src = errorImage }}/>
                         </figure>
                         <h3 id="bienvenido_user">Este es el perfil de {user.nombre}</h3>
                 </section>
