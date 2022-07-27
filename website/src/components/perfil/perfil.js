@@ -52,7 +52,7 @@ const Perfil = () => {
             <article id="perfil-datos">
                 <h1 className="perfil-titulos">¡Hola {jwt.username}!</h1>
                 <figure>
-                    <img src={`http://localhost:5000${jwt.avatar}`}></img>
+                    <img src={`https://instrumentoss.herokuapp.com${jwt.avatar}`}></img>
                 </figure>
             </article>
             <NoInstumentos instrumentos={instrumentos} />
