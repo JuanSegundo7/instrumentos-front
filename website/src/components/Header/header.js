@@ -2,6 +2,8 @@ import React, {useState, useContext} from 'react';
 import Context from "../userContext/userContext"
 import useUser from "../hooks/useUser"
 import {Link} from "react-router-dom"
+import errorImage from '../Home/img/error.webp'
+
 
 import "./header.css";
 import Burger from "../burger/burger"
@@ -75,7 +77,7 @@ function Header(){
                     </Link>
                     <Link to="/perfil" className="desktop-visible">
                         <figure>
-                            <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`} id="avatar"></img>
+                            <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`} onError={e => { e.currentTarget.src = errorImage }} id="avatar"></img>
                         </figure>
                     </Link>
                     <Link to="/crear-instrumento">

@@ -55,6 +55,7 @@ const Perfil = () => {
                     <img src={`https://instumentos-back.herokuapp.com${jwt.avatar}`}></img>
                 </figure>
             </article>
+            <h1 className="h1-white">Estos son tus instrumentos guardados</h1>
             <NoInstumentos instrumentos={instrumentos} />
             <article>
                 <button className="button-login" onClick={onSubmit}> Desconectarse </button>
