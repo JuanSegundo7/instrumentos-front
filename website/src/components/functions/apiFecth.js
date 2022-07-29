@@ -43,7 +43,7 @@ const ApiFecth = (props) => {
                     return <Instrumento
                     key={instrumentos + i}
                     id={instrumentos.id}
-                    imagenes={instrumentos.imagenes[0].url_imagen === undefined ? "hola" : instrumentos.imagenes[0].url_imagen}
+                    imagenes={instrumentos.imagenes[0].url_imagen}
                     nombre={instrumentos.nombre}
                     fabricante={instrumentos.fabricante}
                     // fecha={instrumentos.fecha}
