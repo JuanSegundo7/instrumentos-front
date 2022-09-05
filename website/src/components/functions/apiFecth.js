@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Instrumento from "../Instrumentos/instrumento"
+import errorImage from '../Home/img/error.webp'
 
 const ApiFecth = (props) => {
     let [instrumentosApi, setInstumentos] = useState("")
@@ -23,6 +24,7 @@ const ApiFecth = (props) => {
         },[])
 
         
+        
     if(array === undefined){
         return <p>Cargando...</p>
     }else{
@@ -33,6 +35,15 @@ const ApiFecth = (props) => {
                 return instrumento.fabricante === marca
             }
         })
+        
+    }
+
+    for(let i = 0; i < nuevoArray.length; i++){
+        if(nuevoArray[i].imagenes.length === 0){
+            nuevoArray[i].imagenes = [{url_imagen: errorImage}]
+        }
+    }
+
 
     if(nuevoArray.length === 0){
         return(<h1 id='colombus-size' className="home-title">NO SE ENCONTRO EL INSTRUMENTO QUE BUSCAS</h1>)
@@ -46,7 +57,6 @@ const ApiFecth = (props) => {
                     imagenes={instrumentos.imagenes[0].url_imagen}
                     nombre={instrumentos.nombre}
                     fabricante={instrumentos.fabricante}
-                    // fecha={instrumentos.fecha}
                     precio={instrumentos.precio}
                     precioDescuento={instrumentos.precioDescuento}
                     />
@@ -54,7 +64,6 @@ const ApiFecth = (props) => {
             </article>
         )
         // }
-    }
     }
 }
 

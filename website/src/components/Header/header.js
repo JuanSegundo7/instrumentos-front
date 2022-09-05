@@ -24,6 +24,8 @@ function Header(){
         setValue(!value)
     }
 
+    console.log(jwt)
+
     if(!isLogged){
         return(
             <header>
